@@ -1,4 +1,7 @@
-**Looking for object persistence faster than SQLite? Check out our new mobile database [ObjectBox](http://objectbox.io/) ([GitHub](https://github.com/greenrobot/ObjectBox)).**  
+Check out ObjectBox
+===================
+
+Looking for object persistence faster than SQLite? Check out our new mobile database [ObjectBox](https://objectbox.io/) ([GitHub](https://github.com/objectbox/objectbox-java)). 
 
 greenDAO
 ========
@@ -23,32 +26,34 @@ greenDAO's unique set of features:
 
 Add greenDAO to your project
 ----------------------------
-greenDAO is available on Maven Central. Please ensure that you are using the latest versions by [checking here](http://search.maven.org/#search%7Cga%7C1%7Cg%3A%22org.greenrobot%22%20AND%20a%3A%22greendao%22) [and here](http://search.maven.org/#search%7Cga%7C1%7Cg%3A%22org.greenrobot%22%20AND%20a%3A%22greendao-generator%22)
+greenDAO is available on Maven Central. Please ensure that you are using the latest versions of the [greendao](https://search.maven.org/search?q=g:org.greenrobot%20AND%20a:greendao) and [greendao-gradle-plugin](https://search.maven.org/search?q=g:org.greenrobot%20AND%20a:greendao-gradle-plugin) artifact.
 
-Add the following Gradle configuration to your Android project:
+Add the following Gradle configuration to your Android project. In your root `build.gradle` file:
 ```groovy
-// In your root build.gradle file:
 buildscript {
     repositories {
         jcenter()
         mavenCentral() // add repository
     }
     dependencies {
-        classpath 'com.android.tools.build:gradle:2.3.3'
+        classpath 'com.android.tools.build:gradle:3.1.1'
         classpath 'org.greenrobot:greendao-gradle-plugin:3.2.2' // add plugin
     }
 }
- 
-// In your app projects build.gradle file:
+```
+In your app modules `app/build.gradle` file:
+```groovy
 apply plugin: 'com.android.application'
 apply plugin: 'org.greenrobot.greendao' // apply plugin
  
 dependencies {
-    compile 'org.greenrobot:greendao:3.2.2' // add library
+    implementation 'org.greenrobot:greendao:3.2.2' // add library
 }
 ```
 
 Note that this hooks up the greenDAO Gradle plugin to your build process. When you build your project, it generates classes like DaoMaster, DaoSession and DAOs.
+
+Continue at the [Getting Started](http://greenrobot.org/greendao/documentation/how-to-get-started/) page.
 
 Homepage, Documentation, Links
 ------------------------------
@@ -56,15 +61,17 @@ For more details on greenDAO please check [greenDAO's website](http://greenrobot
 
 [Features](http://greenrobot.org/greendao/features/)
 
-[greenDAO 3](http://greenrobot.org/greendao/documentation/updating-to-greendao-3-and-annotations/)
+[Getting Started](http://greenrobot.org/greendao/documentation/how-to-get-started/)
 
 [Documentation](http://greenrobot.org/greendao/documentation/)
 
 [Changelog](http://greenrobot.org/greendao/changelog/)
 
-[Technical FAQ](http://greenrobot.org/greendao/documentation/technical-faq/)
+[Technical FAQ](http://greenrobot.org/greendao/documentation/technical-faq/) (incl. ProGuard rules)
 
 [Non-Technical FAQ](http://greenrobot.org/greendao/documentation/faq/)
+
+[Migrating to greenDAO 3](http://greenrobot.org/greendao/documentation/updating-to-greendao-3-and-annotations/)
 
 More Open Source by greenrobot
 ==============================
@@ -73,6 +80,3 @@ More Open Source by greenrobot
 [__EventBus__](https://github.com/greenrobot/EventBus) is a central publish/subscribe bus for Android with optional delivery threads, priorities, and sticky events. A great tool to decouple components (e.g. Activities, Fragments, logic components) from each other.
 
 [__Essentials__](https://github.com/greenrobot/essentials) is a set of utility classes and hash functions for Android & Java projects.
-
-[Follow us on Google+](https://plus.google.com/b/114381455741141514652/+GreenrobotDe/posts) to stay up to date.
-
